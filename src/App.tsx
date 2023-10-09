@@ -8,11 +8,11 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setShowPopup(true)
-    }, 1000)
+    }, 2000)
   }, [])
 
   return (
-    <div className="App w-screen h-screen bg-page-pattern bg-cover">
+    <div className="App w-screen h-screen sm:bg-page-pattern bg-mobile-pattern bg-cover bg-center">
       <Popup show={showPopup} setShow={setShowPopup} />
     </div>
   )

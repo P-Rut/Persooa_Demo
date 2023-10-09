@@ -46,7 +46,7 @@ const Form = ({ setFinished, setData }: any) => {
         className="flex flex-col gap-[10px] w-full"
         onSubmit={handleSubmit(onFormSubmit)}
       >
-        <div className="bg-white px-[12px] py-[14px] sm:py-[10px] flex gap-[12px] text-[16px] sm:text-[14px] border-secondary-blue-100 border text-primary-gray  rounded-[5px]">
+        <div className="bg-white px-[12px] py-[14px] sm:py-[10px] flex gap-[12px] text-[16px] sm:text-[14px] border-secondary-blue-100 border text-secondary-blue rounded-[5px]">
           <div className="w-[22px] h-[22px] flex justify-center items-center">
             <PersonIcon />
           </div>
@@ -61,7 +61,7 @@ const Form = ({ setFinished, setData }: any) => {
         {errors.email?.type === "required" ||
         errors.email?.type === "pattern" ? (
           <>
-            <div className="bg-white px-[12px] py-[14px] border sm:py-[10px] flex gap-[12px] text-[16px] sm:text-[14px] border-red-500  text-red-500  rounded-[5px]">
+            <div className="bg-white px-[12px] py-[14px] border sm:py-[10px] flex gap-[12px] text-[16px] sm:text-[14px] border-red-500  text-red-500 rounded-[5px]">
               <div className="w-[22px] h-[22px] flex justify-center items-center">
                 <MailAlert />
               </div>
@@ -72,14 +72,14 @@ const Form = ({ setFinished, setData }: any) => {
                 {...register("email")}
                 className="h-full w-full placeholder:text-red-500"
               />
-              <div>
+              <div className="flex justify-center items-center">
                 <AlertIcon />
               </div>
             </div>
           </>
         ) : (
           <>
-            <div className="bg-white px-[12px] py-[14px] border sm:py-[10px] flex gap-[12px] text-[16px] sm:text-[14px] border-secondary-blue-100  text-primary-gray  rounded-[5px]">
+            <div className="bg-white px-[12px] py-[14px] border sm:py-[10px] flex gap-[12px] text-[16px] sm:text-[14px] border-secondary-blue-100 text-secondary-blue rounded-[5px]">
               <div className="w-[22px] h-[22px] flex justify-center items-center">
                 <MailIcon />
               </div>
@@ -113,7 +113,10 @@ const Form = ({ setFinished, setData }: any) => {
           </div>
           <p className="text-[16px] text-primary-blue sm:text-secondary-blue sm:text-[10px]">
             Zgadzam się na otrzymywanie drogą mailową wiadomości marketingowych
-            oraz akceptuję politykę prywatności.
+            oraz akceptuję{" "}
+            <span className="underline underline-offset-[5px]">
+              politykę prywatności.
+            </span>
           </p>
         </div>
         <div className="w-full mb-[52px] mt-[40px] sm:mt-0 sm:mb-0">

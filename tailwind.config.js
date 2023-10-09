@@ -12,8 +12,9 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        "page-pattern": "url('/src/assets/Background.png')",
-        "popup-pattern": "url('/src/assets/Bg.png')",
+        "page-pattern": "url('/src/assets/background.png')",
+        "mobile-pattern": "url('/src/assets/mobile.png')",
+        "popup-pattern": "url('/src/assets/bg.png')",
         "gratitude-pattern": "url('/src/assets/bg-2.png')",
       },
       fontFamily: {
