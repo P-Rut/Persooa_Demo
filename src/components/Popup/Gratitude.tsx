@@ -28,19 +28,19 @@ const Gratitude = ({ setClose, data }: any) => {
           <div className="flex justify-end w-full sm:w-fit sm:order-last order-first">
             <CloseButton setClose={handleClose} />
           </div>
-          <div className="w-full h-full flex flex-col justify-center items-center sm:items-start px-[40px] sm:px-0 gap-[38px]">
-            <div className="h-full flex justify-end flex-col">
-              <h1 className="text-primary-blue text-[48px] uppercase font-extrabold">
+          <div className="w-full h-full flex flex-col justify-center items-center sm:items-start  px-0  gap-[38px] sm:gap-0">
+            <div className="h-full  w-full  flex justify-center items-center sm:items-start flex-col">
+              <h1 className="text-primary-blue text-[48px] uppercase font-extrabold mb-5">
                 Dziękujemy
               </h1>
-              <div className="text-primary-blue text-[16px] sm:text-start">
+              <div className="text-primary-blue text-[16px] text-center sm:text-start">
                 <span>Na adres </span>
                 <span className="font-semibold">{data.email} </span>
                 <span> wysłaliśmy kod rabatowy.</span>
               </div>
             </div>
-            <div className="h-full flex items-end">
-              <p className="text-[#585D72] text-opacity-[35%] text-[12px]">
+            <div className="h-fit  w-full sm:w-4/5 flex sm:items-end justify-center sm:justify-start">
+              <p className="text-[#585D72] text-opacity-[35%] text-[12px] pb-[26px]">
                 Zamknięcie za {countdown}s
               </p>
             </div>
