@@ -12,7 +12,9 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/Background.png')",
+        "page-pattern": "url('/src/assets/Background.png')",
+        "popup-pattern": "url('/src/assets/Bg.png')",
+        "gratitude-pattern": "url('/src/assets/bg-2.png')",
       },
       fontFamily: {
         sans: ["Poppins"],
