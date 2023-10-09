@@ -7,7 +7,7 @@ const Countdown = () => {
     minutes: "00",
     seconds: "00",
   })
-  function updateCountdown() {
+  const updateCountdown = () => {
     const countDate = new Date().getTime()
     const midnight = new Date().setHours(24, 0, 0, 0)
     const gap = countDate - midnight

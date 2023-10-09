@@ -24,7 +24,7 @@ const Gratitude = ({ setClose, data }: any) => {
   return (
     <div>
       <div className="h-screen w-screen bg-black bg-opacity-[35%] flex justify-center items-center">
-        <div className=" w-[390px] sm:w-[818px] sm:h-[500px] h-[890px] bg-white sm:bg-secondary-blue-100  rounded-[5px] flex flex-col sm:flex-row items-center justify-center sm:items-start m-[18px] sm:m-0 z-30 px-[18px] sm:px-[40px] ">
+        <div className=" w-[390px] sm:w-[818px] sm:h-[500px] h-[890px] bg-white sm:bg-gratitude-pattern sm:bg-cover  rounded-[5px] flex flex-col sm:flex-row items-center justify-center sm:items-start m-[18px] sm:m-0 z-30 px-[18px] sm:px-[40px] ">
           <div className="flex justify-end w-full sm:w-fit sm:order-last order-first">
             <CloseButton setClose={handleClose} />
           </div>

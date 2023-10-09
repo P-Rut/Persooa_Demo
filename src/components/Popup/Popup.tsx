@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Countdown from "./Countdown"
 
 import Form from "./Form"
@@ -24,7 +24,7 @@ const Popup = ({ show, setShow }: any) => {
         <>
           {show === true ? (
             <div className="h-screen w-screen bg-black bg-opacity-[35%] flex justify-center items-center">
-              <div className="w-[390px] sm:w-[818px] bg-white sm:bg-secondary-blue-100 rounded-[5px] flex flex-col items-center sm:items-start m-[18px] sm:m-0 z-30">
+              <div className="w-[390px] sm:w-[818px] sm:bg-popup-pattern sm:bg-cover bg-white sm:bg-secondary-blue-100 rounded-[5px] flex flex-col items-center sm:items-start m-[18px] sm:m-0 z-30">
                 <div className="w-full flex flex-col justify-center items-center sm:items-start mb-[50px] sm:px-[40px] sm:mb-0 z-50">
                   <div className="flex sm:flex-row sm:justify-between w-full pl-[60px] sm:pl-0">
                     <div className=" flex flex-col sm:flex-row gap-5 items-center justify-center ">
