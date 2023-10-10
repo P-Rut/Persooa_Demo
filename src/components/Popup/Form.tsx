@@ -8,15 +8,14 @@ import { PersonIcon } from "../../assets/Icons/PersonIcon"
 import { MailIcon } from "../../assets/Icons/MailIcon"
 import { AlertIcon } from "../../assets/Icons/AlertIcon"
 import { MailAlert } from "../../assets/Icons/MailAlert"
+import { formData } from "../../types"
 
-type FormData = {
-  name: string
-  email: string
-  privacy_policy: boolean
+type PropsTypes = {
+  setFinished: React.Dispatch<React.SetStateAction<boolean>>
+  setData: React.Dispatch<React.SetStateAction<formData | undefined>>
 }
 
-const Form = ({ setFinished, setData }: any) => {
-  const [formData, setFormData] = useState<FormData>()
+const Form = ({ setFinished, setData }: PropsTypes) => {
   const [isLoading, setIsLoading] = useState(false)
 
   const {
@@ -28,25 +27,22 @@ const Form = ({ setFinished, setData }: any) => {
   const onFormSubmit = async (data: any) => {
     try {
       setIsLoading(true)
-      setFormData(data)
       setData(data)
     } finally {
       setTimeout(() => {
         setIsLoading(false)
+        setFinished(true)
       }, 2000)
     }
-    setTimeout(() => {
-      setFinished(true)
-    }, 2000)
   }
 
   return (
     <>
       <form
-        className="flex flex-col gap-[10px] w-full"
+        className="flex flex-col w-full"
         onSubmit={handleSubmit(onFormSubmit)}
       >
-        <div className="bg-white px-[12px] py-[14px] sm:py-[10px] flex gap-[12px] text-[16px] sm:text-[14px] border-secondary-blue-100 border text-secondary-blue rounded-[5px]">
+        <div className="bg-white px-[12px] py-[14px] mb-[10px] sm:py-[10px] flex gap-[12px] text-[16px] sm:text-[14px] border-secondary-blue-100 border text-secondary-blue rounded-[5px]">
           <div className="w-[22px] h-[22px] flex justify-center items-center">
             <PersonIcon />
           </div>
@@ -61,7 +57,7 @@ const Form = ({ setFinished, setData }: any) => {
         {errors.email?.type === "required" ||
         errors.email?.type === "pattern" ? (
           <>
-            <div className="bg-white px-[12px] py-[14px] border sm:py-[10px] flex gap-[12px] text-[16px] sm:text-[14px] border-red-500  text-red-500 rounded-[5px]">
+            <div className="bg-white px-[12px] mb-[10px] py-[14px] border sm:py-[10px] flex gap-[12px] text-[16px] sm:text-[14px] border-red-500  text-red-500 rounded-[5px]">
               <div className="w-[22px] h-[22px] flex justify-center items-center">
                 <MailAlert />
               </div>
@@ -79,7 +75,7 @@ const Form = ({ setFinished, setData }: any) => {
           </>
         ) : (
           <>
-            <div className="bg-white px-[12px] py-[14px] border sm:py-[10px] flex gap-[12px] text-[16px] sm:text-[14px] border-secondary-blue-100 text-secondary-blue rounded-[5px]">
+            <div className="bg-white px-[12px] mb-[10px] py-[14px] border sm:py-[10px] flex gap-[12px] text-[16px] sm:text-[14px] border-secondary-blue-100 text-secondary-blue rounded-[5px]">
               <div className="w-[22px] h-[22px] flex justify-center items-center">
                 <MailIcon />
               </div>
@@ -114,9 +110,10 @@ const Form = ({ setFinished, setData }: any) => {
           <p className="text-[16px] text-primary-blue sm:text-secondary-blue sm:text-[10px]">
             Zgadzam się na otrzymywanie drogą mailową wiadomości marketingowych
             oraz akceptuję{" "}
-            <span className="underline underline-offset-[5px]">
-              politykę prywatności.
+            <span className="underline underline-offset-[4px]">
+              politykę prywatności
             </span>
+            <span>.</span>
           </p>
         </div>
         <div className="w-full mb-[52px] mt-[40px] sm:mt-0 sm:mb-0">

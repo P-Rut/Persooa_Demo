@@ -1,8 +1,14 @@
 import React, { useEffect } from "react"
 import CloseButton from "./Buttons/CloseButton"
 import { useState } from "react"
+import { formData } from "../../types"
 
-const Gratitude = ({ setClose, data }: any) => {
+type PropsType = {
+  setClose: React.Dispatch<React.SetStateAction<boolean>>
+  data: formData | undefined
+}
+
+const Gratitude = ({ setClose, data }: PropsType) => {
   const [countdown, setCountdown] = useState(4)
 
   const handleClose = () => {
@@ -19,7 +25,7 @@ const Gratitude = ({ setClose, data }: any) => {
     }, 1000)
 
     return () => clearInterval(timer)
-  }, [countdown])
+  }, [countdown, setClose])
 
   return (
     <div>
@@ -35,7 +41,7 @@ const Gratitude = ({ setClose, data }: any) => {
               </h1>
               <div className="text-primary-blue text-[16px] text-center sm:text-start">
                 <span>Na adres </span>
-                <span className="font-semibold">{data.email} </span>
+                <span className="font-semibold">{data?.email} </span>
                 <span> wysłaliśmy kod rabatowy.</span>
               </div>
             </div>
